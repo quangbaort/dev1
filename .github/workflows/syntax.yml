@@ -1,0 +1,16 @@
+name: ProjectSyntax
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  syntax:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: overtrue/phplint@8.0
+        with:
+          path: ./app/
+          options: --exclude=*.log
